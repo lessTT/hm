@@ -6,20 +6,23 @@
 /*   By: storchbu <storchbu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 21:50:12 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/02 16:46:59 by storchbu         ###   ########.fr       */
+/*   Updated: 2018/12/02 19:01:54 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// ------------> DONE! <------------
 
-void    *ft_memset(char *memptr, int val, int num) //(строка, на что, сколько)
+void    *ft_memset(void *a, int val, size_t num) //(строка, на что, сколько)
 {
-    int change;
+	char *str;
+    size_t change;
 
     change = 0;
-    while (num - 1 >= change)
+	str = a;
+    while (num > change)
     {
-        memptr[change] = val;
+        str[change] = val;
         change++;
     }
+	return (str);
 }
