@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 16:33:34 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/09 19:16:09 by storchbu         ###   ########.fr       */
+/*   Created: 2018/12/09 20:57:21 by storchbu          #+#    #+#             */
+/*   Updated: 2018/12/10 00:07:31 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_bzero(void *s, size_t n)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	char 	*new;
-	size_t 	y;
+	char *s1 = (char *)src;
+	char *s2 = (char *)dest;
 
-	y = 0;
-	new = s;
-	while (n > y)
+	while (n--)
 	{
-
-		new[y] = '\0';
-		y++;
+		if (*s1 == c)
+			return (s2 + 1);
+		*s2 = *s1;
+		s2++;
+		s1++;
 	}
-	return  (new);
+	return (NULL);
 }
-
-
-// s - куда копируются нули
-// n - кол-во нулей 
