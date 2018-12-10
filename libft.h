@@ -6,7 +6,7 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 19:31:11 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/09 23:12:48 by storchbu         ###   ########.fr       */
+/*   Updated: 2018/12/10 21:41:25 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	*ft_memset(void *a, int val, size_t num);
 // char		*ft_strcpy(char *dest, const char *src);
 // char		*ft_strdup(char *src);
 // size_t		ft_strlcat(char *dest, const char *src, size_t size);
-// size_t		ft_strlen(const char *str);
+size_t		ft_strlen(const char *str);
 // char		*ft_strncat(char *dest, char *src, size_t n);
 // int			ft_strncmp(const char *str1, const char *str2, size_t n);
 // char		*ft_strncpy(char *dest, const char *src, size_t n);
