@@ -6,7 +6,7 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 16:33:34 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/09 19:16:09 by storchbu         ###   ########.fr       */
+/*   Updated: 2018/12/12 02:59:41 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_bzero(void *s, size_t n)
 {
-	char 	*new;
-	size_t 	y;
+	char	*new;
+	size_t	y;
 
 	y = 0;
 	new = s;
@@ -25,9 +25,5 @@ void	*ft_bzero(void *s, size_t n)
 		new[y] = '\0';
 		y++;
 	}
-	return  (new);
+	return (new);
 }
-
-
-// s - куда копируются нули
-// n - кол-во нулей 

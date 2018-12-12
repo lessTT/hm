@@ -6,15 +6,13 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 18:33:20 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/09 22:37:50 by storchbu         ###   ########.fr       */
+/*   Updated: 2018/12/12 03:00:13 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// DONE
-
 #include "libft.h"
 
-void	*ft_memchr (const void *str, int c, size_t n)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
 	char *newstr;
 
