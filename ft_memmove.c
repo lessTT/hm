@@ -6,13 +6,11 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 18:02:41 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/12 00:54:18 by storchbu         ###   ########.fr       */
+/*   Updated: 2018/12/12 05:07:27 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t		ft_strlen(const char *str);
 
 void	*ft_memmove(void *dest, const void *src, size_t nb) //(куда, откуда, сколько)
 {
