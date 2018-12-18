@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/16 20:48:57 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/18 22:12:01 by storchbu         ###   ########.fr       */
+/*   Created: 2018/12/18 22:19:37 by storchbu          #+#    #+#             */
+/*   Updated: 2018/12/18 22:49:31 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2) //"my big house" "big" = big house
+int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char	*news1;
-	char	*news2;
-
-	if(!*s2)
-		return((void *)s1);
-	while (*s1)
-	{	
-		if (*s1 == *s2)
-		{
-			news1 = (void *)s1 + 1;
-			news2 = (void *)s2 + 1;
-			while (*news1 && *news2 && *news1 == *news2)
-			{
-				++news1;
-				++news2;
-			}
-			if(!*news2)
-				return ((void *)s1);
-		}
+	while (*s1 && *s2 && *s1 == *s2 && n--)
+	{
 		s1++;
+		s2++;
 	}
-	return (NULL);
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }
