@@ -6,15 +6,11 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 18:35:37 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/23 21:02:28 by storchbu         ###   ########.fr       */
+/*   Updated: 2018/12/23 22:48:01 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 int		srly(const char *wtf)
 {
@@ -43,28 +39,11 @@ int		have_word(const char *str)
 	while (str[i])
 	{
 		if ((str[i] >= 'a' || str[i] >= 'A') && \
-			(str[i] <= 'z' || str[i] <= 'Z'))
+		(str[i] <= 'z' || str[i] <= 'Z'))
 			return (1);
 		i++;
 	}
 	return (0);
-}
-
-int		vse_norm(const char *str)
-{
-	int slova;
-
-	slova = 0;
-	if (ft_strsize(str) > 18)
-	{
-		if (have_word(str))
-			slova = 1;
-		if (slova == 0 && *str != '-')
-			return (-1);
-		if (*str == '-' && slova == 0)
-			return (0);
-	}
-	return (1);
 }
 
 int		ft_atoi(const char *str)
@@ -76,11 +55,17 @@ int		ft_atoi(const char *str)
 	minus = 1;
 	while (srly(str))
 		str++;
-	if (vse_norm(str))
+	if (ft_strsize(str) > 13 && !have_word(str))
+	{
+		if (*str == '-')
+			return (0);
+		else
+			return (-1);
+	}
 	if (*str == '-')
 	{
-		str++;
 		minus = -1;
+		str++;
 	}
 	while (*str >= '0' && *str <= '9')
 	{
@@ -88,21 +73,4 @@ int		ft_atoi(const char *str)
 		str++;
 	}
 	return (res * minus);
-}
-
-int		main()
-{
-	char	str[200] = "22222222222222222222";
-	int		val = atoi(str);
-	printf("String value = %s, real atoi = %d\n", str, val);
-
-	int		val1 = ft_atoi(str);
-	printf("String value = %s,  my  atoi = %d\n", str, val1);
-
-	int n = 0;
-	while (str[n++]);
-	printf("%d\n", n-1);
-	printf("%d\n", ft_strsize(str));
-
-	return 0;
 }
