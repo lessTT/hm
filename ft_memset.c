@@ -6,13 +6,13 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/30 21:50:12 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/09 19:16:41 by storchbu         ###   ########.fr       */
+/*   Updated: 2019/01/10 16:53:59 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *a, int val, size_t num) //(строка, на что, сколько)
+void	*ft_memset(void *a, int val, size_t num)
 {
 	char *str;
 	size_t change;

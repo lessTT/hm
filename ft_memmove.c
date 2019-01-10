@@ -6,13 +6,13 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 18:02:41 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/12 05:07:27 by storchbu         ###   ########.fr       */
+/*   Updated: 2019/01/10 16:54:07 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t nb) //(куда, откуда, сколько)
+void	*ft_memmove(void *dest, const void *src, size_t nb)
 {
 	size_t	cout;
 	char	*s1;
