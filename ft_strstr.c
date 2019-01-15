@@ -6,7 +6,7 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 20:48:57 by storchbu          #+#    #+#             */
-/*   Updated: 2019/01/10 16:55:22 by storchbu         ###   ########.fr       */
+/*   Updated: 2019/01/15 16:40:12 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ char	*ft_strstr(const char *s1, const char *s2)
 	char	*news1;
 	char	*news2;
 
-	if(!*s2)
-		return((void *)s1);
+	if (!*s2)
+		return ((void *)s1);
 	while (*s1)
-	{	
+	{
 		if (*s1 == *s2)
 		{
 			news1 = (void *)s1 + 1;
