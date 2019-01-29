@@ -6,12 +6,15 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 18:35:37 by storchbu          #+#    #+#             */
-/*   Updated: 2018/12/23 22:48:01 by storchbu         ###   ########.fr       */
+/*   Updated: 2019/01/29 13:47:26 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+
+//надо пофиксить на максимальную длинну int (-2147483648;2147483647)
+ 
 int		srly(const char *wtf)
 {
 	if (*wtf == '\n' || *wtf == '\f' || *wtf == '\t' || *wtf == '\r' \
@@ -46,7 +49,13 @@ int		have_word(const char *str)
 	return (0);
 }
 
-int		ft_atoi(const char *str)
+// int		max_int(const char *str)
+// {
+// 	if (str == "2147483647")
+
+// }
+
+int		atoi(const char *str)
 {
 	int res;
 	int minus;
@@ -55,7 +64,7 @@ int		ft_atoi(const char *str)
 	minus = 1;
 	while (srly(str))
 		str++;
-	if (ft_strsize(str) > 13 && !have_word(str))
+	// if (ft_strsize(str) > 10 && !have_word(str) && max_int(str))
 	{
 		if (*str == '-')
 			return (0);

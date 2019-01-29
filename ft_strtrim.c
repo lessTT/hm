@@ -6,7 +6,7 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 20:49:10 by storchbu          #+#    #+#             */
-/*   Updated: 2019/01/22 21:54:32 by storchbu         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:00:27 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,17 @@ char	*ft_strtrim(char const *s)
 
 	j = 0;
 	i = 0;
-	si = ft_strlen(s) - 1;
-	new_s = ft_strnew(si);
-	if (!s || !new_s)
-		return (NULL);
-	while (*(s + i))
+	if (s)
 	{
+		si = ft_strlen(s) - 1;
 		while (*(s + i) == ' ' || *(s + i) == '\t' || *(s + i) == '\n')
 			i++;
+		if (!*(s + i))
+			return ((char *)(s + i));
 		while (*(s + si) == ' ' || *(s + si) == '\t' || *(s + si) == '\n')
 			si--;
-		while (si >= i)
-			*(new_s + j++) = *(s + i++);
+		new_s = ft_strsub(s, i, si - i + 1);
+		return (new_s);
 	}
-	return (new_s);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/22 21:57:25 by storchbu          #+#    #+#             */
-/*   Updated: 2019/01/22 22:01:03 by storchbu         ###   ########.fr       */
+/*   Updated: 2019/01/29 12:49:45 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr(char const *s)
 {
-	ft_putstr_fd(s, 1);
+	if (s)
+		while (*s)
+			ft_putchar(*s++);
 }
