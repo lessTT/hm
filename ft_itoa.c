@@ -1,65 +1,63 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/02/18 22:01:53 by storchbu          #+#    #+#             */
+/*   Updated: 2019/02/18 23:59:02 by storchbu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    *ft_bzero(void *s, size_t n)
+#include "libft.h"
+
+static int	num_len(int n)
 {
-    char    *new;
-    size_t    y;
-    
-    y = 0;
-    new = s;
-    while (n > y)
-    {
-        
-        new[y] = '\0';
-        y++;
-    }
-    return (new);
+	int i;
+
+	i = 0;
+	if (n >= 0)
+	{
+		while (n >= 10)
+		{
+			n /= 10;
+			i++;
+		}
+		return (i + 1);
+	}
+	else
+	{
+		while (n <= -10)
+		{
+			n /= 10;
+			i++;
+		}
+		return (i + 2);
+	}
 }
 
-void    *ft_memalloc(size_t size)
+char		*ft_itoa(int n)
 {
-    void    *new;
-    
-    new = malloc(size);
-    if (!new)
-        return (NULL);
-    ft_bzero(new, size);
-    return (new);
+	int		i;
+	char	*s;
+
+	i = num_len(n);
+	if (n == 0)
+		return (ft_strcpy(ft_strnew(1), "0"));
+	if (n == -2147483648)
+		return (ft_strcpy(ft_strnew(11), "-2147483648"));
+	if ((s = ft_strnew(i)) == NULL)
+		return (NULL);
+	if (n < 0)
+	{
+		n *= -1;
+		s[0] = '-';
+	}
+	while (n)
+	{
+		s[--i] = ((n % 10) + '0');
+		n /= 10;
+	}
+	return (s);
 }
-
-char    *ft_strnew(size_t size)
-{
-    return ((char*)ft_memalloc(sizeof(char) * (size + 1)));
-}
-
-int num_len(int n)
-{
-    int len = 0;
-    
-    while(n)
-    {    n = n / 10;
-        len++;}
-    return len;
-}
-
-//       <----------------------------->
-
-int main(int argc, const char * argv[]) {
-    
-    int n = 1212349;
-    int i = 0;
-    
-    char *strnum = (char*)malloc(sizeof(char) * num_len(n) + 1);
-    
-    while(n)
-    {
-        strnum[i] = ft_strnew(<#size_t size#>)
-    }
-    
-    
-    
-    printf("%d", num_len(n));
-    return 0;
-}
-
