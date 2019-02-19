@@ -48,24 +48,19 @@ int		have_word(const char *str)
 
 int		ft_atoi(const char *str)
 {
-	long int res;
-	int minus;
+	long int	res;
+	int			minus;
 
 	res = 0;
 	minus = 1;
 	while (srly(str))
 		str++;
-    if (!(ft_strcmp(str, "-2147483648")))
-        return (-2147483648);
-	 if (ft_strsize(str) > 10 && !have_word(str))
-	 {
-         if (*str == '-')
-             return (0);
-         else
-             return (-1);
-     }
+	if (!(ft_strcmp(str, "-2147483648")))
+		return (-2147483648);
+	if (ft_strsize(str) > 10 && !have_word(str))
+		return (*str == '-' ? 0 : -1);
 	if (*str == '-')
-    {
+	{
 		minus = -1;
 		str++;
 	}
@@ -76,4 +71,3 @@ int		ft_atoi(const char *str)
 	}
 	return ((int)res * minus);
 }
-

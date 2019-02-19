@@ -21,7 +21,6 @@ void	*ft_bzero(void *s, size_t n)
 	new = s;
 	while (n > y)
 	{
-
 		new[y] = '\0';
 		y++;
 	}
