@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/nikitavv/Desktop/2142/hm/ft_strsplit.c
+libft.h
+/Users/nikitavv/Desktop/2142/hm/libft.h
+
+/Users/nikitavv/Desktop/2142/hm/libft.h
+unistd.h
+-
+fcntl.h
+-
+stdlib.h
+-
+string.h
+-
+ctype.h
+-
+stdio.h
+-
+
