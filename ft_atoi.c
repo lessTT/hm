@@ -12,36 +12,6 @@
 
 #include "libft.h"
 
-//#include <libft.h>
-//
-//int        ft_atoi(const char *str)
-//{
-//    int        i;
-//    int        num;
-//    int        sign;
-//
-//    i = 0;
-//    num = 0;
-//    sign = 1;
-//    while (*(str + i) == '\n' ||
-//           *(str + i) == '\t' ||
-//           *(str + i) == '\r' ||
-//           *(str + i) == '\v' ||
-//           *(str + i) == '\f' ||
-//           *(str + i) == ' ')
-//        i++;
-//    if (*(str + i) == '-')
-//        sign = -1;
-//    if (*(str + i) == '-' || *(str + i) == '+')
-//        i++;
-//    while (*(str + i) && *(str + i) >= '0' && *(str + i) <= '9')
-//        num = num * 10 + (*(str + i++) - '0');
-//    return (num * sign);
-//}
-
-
-//надо пофиксить на максимальную длинну int (-2147483648;2147483647)
- 
 int		srly(const char *wtf)
 {
 	if (*wtf == '\n' || *wtf == '\f' || *wtf == '\t' || *wtf == '\r' \
@@ -76,37 +46,34 @@ int		have_word(const char *str)
 	return (0);
 }
 
-// int		max_int(const char *str)
-// {
-// 	if (str == "2147483647")
-
-// }
-
-int		atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	int res;
+	long int res;
 	int minus;
 
 	res = 0;
 	minus = 1;
 	while (srly(str))
 		str++;
-	// if (ft_strsize(str) > 10 && !have_word(str) && max_int(str))
-	{
-		if (*str == '-')
-			return (0);
-		else
-			return (-1);
-	}
+    if (!(ft_strcmp(str, "-2147483648")))
+        return (-2147483648);
+	 if (ft_strsize(str) > 10 && !have_word(str))
+	 {
+         if (*str == '-')
+             return (0);
+         else
+             return (-1);
+     }
 	if (*str == '-')
-	{
+    {
 		minus = -1;
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		res = res * 10 + *str - '0';
+		res = res * 10 + (*str - '0');
 		str++;
 	}
-	return (res * minus);
+	return ((int)res * minus);
 }
+

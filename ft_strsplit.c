@@ -12,11 +12,18 @@
 
 #include "libft.h"
 
-static int	ft_words(char *s, char c)
+static void     freearr(char **words, int i)
+{
+    while (i--)
+        ft_strdel(&words[i]);
+    free(words);
+}
+
+static int      ft_words(char const *s, char c)
 {
     int n;
     n = 0;
-    
+
     while (*s)
     {
         while (*s == c)
@@ -27,13 +34,13 @@ static int	ft_words(char *s, char c)
         while (*s != c && *s)
             s++;
     }
-    return (n + 1);
+    return (n);
 }
 
-static int	ft_word_len(char *arr, char c)
+static size_t   ft_word_len(char *arr, char c)
 {
-    int n;
-    
+    size_t n;
+
     n = 0;
     while(*arr == c)
         arr++;
@@ -45,34 +52,30 @@ static int	ft_word_len(char *arr, char c)
     return(n);
 }
 
-char		**ft_strsplit(char const *s, char c){
+char		**ft_strsplit(char const *s, char c)
+{
     int a;
     int b;
+    int n;
+    char **new_s;
 
 	a = 0;
-	b = 0;
-    char **new_s = (char**)malloc(ft_words((char*)s, c) * sizeof(char));
-	if (new_s == NULL)
+	n = 0;
+	if (!s)
+        return (NULL);
+	if (!(new_s = (char**)malloc(ft_words((char*)s, c) * sizeof(*new_s) + 1)))
 		return (NULL);
-    while(*s)
+    while(a < ft_words(s, c))
     {
-        while (*s == c && *s)
-            s++;
-        new_s[a] = ft_strnew(ft_word_len((char*)s, c));
-        while (*s != c && *s)
-            new_s[a][b++] = *s++;
-        a++;
         b = 0;
+        if (!(new_s[a] = ft_strnew(ft_word_len((char*)&s[n], c))))
+            freearr(new_s, a);
+        while (s[n] == c)
+            n++;
+        while (s[n] != c && s[n])
+            new_s[a][b++] = s[n++];
+        a++;
     }
+    new_s[a] = NULL;
     return (new_s);
-}
-
-int main()
-{
-    char *s = "      split       this for   me  !       ";
-
-    char **result = ft_strsplit(s, ' ');
-
-    ft_putstr(*result);
-    return (0);
 }

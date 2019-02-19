@@ -49,6 +49,7 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *s1, const char *s2);
 int		ft_toupper(int ch);
 int		ft_tolower(int ch);
+void	ft_strdel(char **as);
 /* ***** Part 2 - Libc functions ***** */
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);

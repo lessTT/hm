@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/Users/nikitavv/Desktop/2142/hm/ft_strsplit.c
+/Users/storchbu/42/libf/ft_atoi.c
 libft.h
-/Users/nikitavv/Desktop/2142/hm/libft.h
+/Users/storchbu/42/libf/libft.h
 
-/Users/nikitavv/Desktop/2142/hm/libft.h
+/Users/storchbu/42/libf/libft.h
 unistd.h
 -
 fcntl.h
