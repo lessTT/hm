@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		srly(const char *wtf)
+static int		srly(const char *wtf)
 {
 	if (*wtf == '\n' || *wtf == '\f' || *wtf == '\t' || *wtf == '\r' \
 		|| *wtf == '\v' || *wtf == ' ' || *wtf == '+')
@@ -21,7 +21,7 @@ int		srly(const char *wtf)
 		return (0);
 }
 
-int		ft_strsize(const char *str)
+static int		ft_strsize(const char *str)
 {
 	int res;
 
@@ -31,7 +31,7 @@ int		ft_strsize(const char *str)
 	return (res);
 }
 
-int		have_word(const char *str)
+static int		have_word(const char *str)
 {
 	int i;
 

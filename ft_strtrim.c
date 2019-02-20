@@ -14,24 +14,39 @@
 
 char	*ft_strtrim(char const *s)
 {
-	char	*new_s;
-	int		i;
-	int		si;
-	int		j;
+//	char	*new_s;
+//	int		i;
+//	size_t	si;
+//
+//	i = 0;
+//	if (s)
+//	{
+//		si = ft_strlen(s) ;
+//		while (*(s + i) == ' ' || *(s + i) == '\t' || *(s + i) == '\n')
+//			i++;
+//		if (!*(s + i))
+//            return (ft_strnew(0));
+//		while (*(s + si) == ' ' || *(s + si) == '\t' || *(s + si) == '\n')
+//			si--;
+//		new_s = ft_strsub(s, i, si - i + 1);
+//		return (new_s);
+//	}
+//	return (NULL);
 
-	j = 0;
+	char			*str;
+	size_t			len;
+	int				i;
+
+	if (!s)
+		return (NULL);
 	i = 0;
-	if (s)
-	{
-		si = ft_strlen(s) - 1;
-		while (*(s + i) == ' ' || *(s + i) == '\t' || *(s + i) == '\n')
-			i++;
-		if (!*(s + i))
-			return ((char *)(s + i));
-		while (*(s + si) == ' ' || *(s + si) == '\t' || *(s + si) == '\n')
-			si--;
-		new_s = ft_strsub(s, i, si - i + 1);
-		return (new_s);
-	}
-	return (NULL);
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		i++;
+	if (s[i] == '\0')
+		return (ft_strnew(0));
+	len = ft_strlen(s);
+	while (s[len] == ' ' || s[len] == '\t' || s[len] == '\n' || s[len] == '\0')
+		len--;
+	str = ft_strsub(s, i, len - i + 1);
+	return (str);
 }

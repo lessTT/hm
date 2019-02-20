@@ -15,12 +15,8 @@
 # define LIBFT_H
 #include <unistd.h>
 #include <fcntl.h>
-#include <stdlib.h> //DELETE
-#include <string.h> //DELETE
-#include <ctype.h> //DELETE
-#include <stdio.h> //DELETE
+#include <stdlib.h>
 
-/* ***** Part 1 - Libc functions ***** */
 int		ft_atoi(const char *str);
 void	*ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
@@ -50,7 +46,6 @@ char	*ft_strstr(const char *s1, const char *s2);
 int		ft_toupper(int ch);
 int		ft_tolower(int ch);
 void	ft_strdel(char **as);
-/* ***** Part 2 - Libc functions ***** */
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char	*ft_strnew(size_t size);

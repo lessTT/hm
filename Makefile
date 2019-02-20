@@ -14,7 +14,7 @@ NAME = libft.a
 
 SRCS =	ft_*.c
 
-OUT = $(SRCS:.c=.o)
+OUT = $(SRCS:*.c=*.o)
 
 INCLUDES = libft.h
 
