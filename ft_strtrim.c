@@ -14,25 +14,6 @@
 
 char	*ft_strtrim(char const *s)
 {
-//	char	*new_s;
-//	int		i;
-//	size_t	si;
-//
-//	i = 0;
-//	if (s)
-//	{
-//		si = ft_strlen(s) ;
-//		while (*(s + i) == ' ' || *(s + i) == '\t' || *(s + i) == '\n')
-//			i++;
-//		if (!*(s + i))
-//            return (ft_strnew(0));
-//		while (*(s + si) == ' ' || *(s + si) == '\t' || *(s + si) == '\n')
-//			si--;
-//		new_s = ft_strsub(s, i, si - i + 1);
-//		return (new_s);
-//	}
-//	return (NULL);
-
 	char			*str;
 	size_t			len;
 	int				i;

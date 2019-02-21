@@ -15,16 +15,17 @@
 static void		freearr(char **words, int i)
 {
 	while (i--)
-		ft_strdel(&words[i]);free(words);
+		ft_strdel(&words[i]);
+	free(words);
 }
 
 static int		ft_words(char const *s, char c)
 {
 	int n;
-	n = 0;
 
-    while (*s)
-    {
+	n = 0;
+	while (*s)
+	{
 		while (*s == c)
 			s++;
 		if (!*s)
@@ -41,22 +42,22 @@ static size_t	ft_word_len(char *arr, char c)
 	size_t n;
 
 	n = 0;
-	while(*arr == c)
+	while (*arr == c)
 		arr++;
-	while(*arr != c)
+	while (*arr != c)
 	{
 		arr++;
 		n++;
 	}
-	return(n);
+	return (n);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
-	int a;
-	int b;
-	int n;
-	char **new_s;
+	int		a;
+	int		b;
+	int		n;
+	char	**new_s;
 
 	a = 0;
 	n = 0;
@@ -64,7 +65,7 @@ char		**ft_strsplit(char const *s, char c)
 		return (NULL);
 	if (!(new_s = (char**)malloc(ft_words((char*)s, c) * sizeof(*new_s) + 1)))
 		return (NULL);
-	while(a < ft_words(s, c))
+	while (a < ft_words(s, c))
 	{
 		b = 0;
 		if (!(new_s[a] = ft_strnew(ft_word_len((char*)&s[n], c))))

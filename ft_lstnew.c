@@ -1,39 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: storchbu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/16 20:48:57 by storchbu          #+#    #+#             */
-/*   Updated: 2019/01/15 16:40:12 by storchbu         ###   ########.fr       */
+/*   Created: 2019/02/21 19:38:14 by storchbu          #+#    #+#             */
+/*   Updated: 2019/02/21 19:52:03 by storchbu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*news1;
-	char	*news2;
+	t_list *list;
 
-	if (!*s2)
-		return ((void *)s1);
-	while (*s1)
+	list = (t_list*)malloc(sizeof(*list) * content_size);
+	if (list)
 	{
-		if (*s1 == *s2)
+		if (content == NULL)
 		{
-			news1 = (void *)s1 + 1;
-			news2 = (void *)s2 + 1;
-			while (*news1 && *news2 && *news1 == *news2)
-			{
-				++news1;
-				++news2;
-			}
-			if (!*news2)
-				return ((void *)s1);
+			list->content = NULL;
+			list->content_size = 0;
+			list->next = NULL;
 		}
-		s1++;
+		else
+		{
+			if (!(list->content = malloc(content_size)))
+			{
+				return (NULL);
+				free(list);
+			}
+			ft_memcpy(list->content, content, content_size);
+			list->content_size = content_size;
+			list->next = NULL;
+		}
+		return (list);
 	}
 	return (NULL);
 }
