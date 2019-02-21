@@ -21,15 +21,14 @@ void	*ft_memmove(void *dest, const void *src, size_t nb)
 	s1 = (char *)src;
 	d1 = (char *)dest;
 	cout = -1;
-
-	if(s1 < d1)
+	if (s1 < d1)
 	{
-		while((int)--nb >= 0)
+		while ((int)--nb >= 0)
 			d1[nb] = s1[nb];
 	}
 	else
 	{
-		while(nb > ++cout)
+		while (nb > ++cout)
 			d1[cout] = s1[cout];
 	}
 	return (d1);
